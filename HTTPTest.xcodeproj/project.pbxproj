@@ -19,6 +19,7 @@
 		B42016DB16B1786D006CBF10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42016DA16B1786D006CBF10 /* ViewController.m */; };
 		B42016DE16B1786E006CBF10 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42016DC16B1786E006CBF10 /* ViewController_iPhone.xib */; };
 		B42016E116B1786E006CBF10 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42016DF16B1786E006CBF10 /* ViewController_iPad.xib */; };
+		B4E517D316B17A3D002CC5AE /* ImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E517D216B17A3D002CC5AE /* ImageService.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,8 @@
 		B42016DA16B1786D006CBF10 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B42016DD16B1786E006CBF10 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		B42016E016B1786E006CBF10 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		B4E517D116B17A3D002CC5AE /* ImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageService.h; sourceTree = "<group>"; };
+		B4E517D216B17A3D002CC5AE /* ImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageService.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,8 @@
 				B42016DC16B1786E006CBF10 /* ViewController_iPhone.xib */,
 				B42016DF16B1786E006CBF10 /* ViewController_iPad.xib */,
 				B42016C816B1786D006CBF10 /* Supporting Files */,
+				B4E517D116B17A3D002CC5AE /* ImageService.h */,
+				B4E517D216B17A3D002CC5AE /* ImageService.m */,
 			);
 			path = HTTPTest;
 			sourceTree = "<group>";
@@ -180,6 +185,7 @@
 				B42016CE16B1786D006CBF10 /* main.m in Sources */,
 				B42016D216B1786D006CBF10 /* AppDelegate.m in Sources */,
 				B42016DB16B1786D006CBF10 /* ViewController.m in Sources */,
+				B4E517D316B17A3D002CC5AE /* ImageService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -306,6 +312,7 @@
 				B42016E616B1786E006CBF10 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
