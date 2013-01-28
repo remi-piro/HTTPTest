@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		B42016C216B1786D006CBF10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B42016C116B1786D006CBF10 /* UIKit.framework */; };
 		B42016C416B1786D006CBF10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B42016C316B1786D006CBF10 /* Foundation.framework */; };
-		B42016C616B1786D006CBF10 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B42016C516B1786D006CBF10 /* CoreGraphics.framework */; };
 		B42016CC16B1786D006CBF10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B42016CA16B1786D006CBF10 /* InfoPlist.strings */; };
 		B42016CE16B1786D006CBF10 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B42016CD16B1786D006CBF10 /* main.m */; };
 		B42016D216B1786D006CBF10 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B42016D116B1786D006CBF10 /* AppDelegate.m */; };
@@ -19,14 +18,21 @@
 		B42016DB16B1786D006CBF10 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B42016DA16B1786D006CBF10 /* ViewController.m */; };
 		B42016DE16B1786E006CBF10 /* ViewController_iPhone.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42016DC16B1786E006CBF10 /* ViewController_iPhone.xib */; };
 		B42016E116B1786E006CBF10 /* ViewController_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = B42016DF16B1786E006CBF10 /* ViewController_iPad.xib */; };
-		B4E517D316B17A3D002CC5AE /* ImageService.m in Sources */ = {isa = PBXBuildFile; fileRef = B4E517D216B17A3D002CC5AE /* ImageService.m */; };
+		B44889D516B6C06600E1DDE7 /* Simpsons.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B44889D416B6C06600E1DDE7 /* Simpsons.mp4 */; };
+		B4488A0316B6C5D100E1DDE7 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A0216B6C5D100E1DDE7 /* opencv2.framework */; };
+		B4488A1916B6CBBF00E1DDE7 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A1816B6CBBF00E1DDE7 /* CoreMedia.framework */; };
+		B4488A1B16B6CBC800E1DDE7 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A1A16B6CBC800E1DDE7 /* CoreVideo.framework */; };
+		B4488A1D16B6CBD100E1DDE7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A1C16B6CBD100E1DDE7 /* AVFoundation.framework */; };
+		B4488A1F16B6CBD900E1DDE7 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A1E16B6CBD900E1DDE7 /* ImageIO.framework */; };
+		B4488A2116B6CBE800E1DDE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A2016B6CBE800E1DDE7 /* CoreGraphics.framework */; };
+		B4488A2316B6CBF000E1DDE7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A2216B6CBF000E1DDE7 /* libz.dylib */; };
+		B4E517D316B17A3D002CC5AE /* ImageService.mm in Sources */ = {isa = PBXBuildFile; fileRef = B4E517D216B17A3D002CC5AE /* ImageService.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B42016BD16B1786D006CBF10 /* HTTPTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTPTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42016C116B1786D006CBF10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B42016C316B1786D006CBF10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
-		B42016C516B1786D006CBF10 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B42016C916B1786D006CBF10 /* HTTPTest-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HTTPTest-Info.plist"; sourceTree = "<group>"; };
 		B42016CB16B1786D006CBF10 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		B42016CD16B1786D006CBF10 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -40,8 +46,16 @@
 		B42016DA16B1786D006CBF10 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B42016DD16B1786E006CBF10 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPhone.xib; sourceTree = "<group>"; };
 		B42016E016B1786E006CBF10 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/ViewController_iPad.xib; sourceTree = "<group>"; };
+		B44889D416B6C06600E1DDE7 /* Simpsons.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = Simpsons.mp4; sourceTree = "<group>"; };
+		B4488A0216B6C5D100E1DDE7 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
+		B4488A1816B6CBBF00E1DDE7 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		B4488A1A16B6CBC800E1DDE7 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		B4488A1C16B6CBD100E1DDE7 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		B4488A1E16B6CBD900E1DDE7 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		B4488A2016B6CBE800E1DDE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		B4488A2216B6CBF000E1DDE7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B4E517D116B17A3D002CC5AE /* ImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageService.h; sourceTree = "<group>"; };
-		B4E517D216B17A3D002CC5AE /* ImageService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageService.m; sourceTree = "<group>"; };
+		B4E517D216B17A3D002CC5AE /* ImageService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageService.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,9 +63,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4488A2316B6CBF000E1DDE7 /* libz.dylib in Frameworks */,
+				B4488A2116B6CBE800E1DDE7 /* CoreGraphics.framework in Frameworks */,
+				B4488A1F16B6CBD900E1DDE7 /* ImageIO.framework in Frameworks */,
+				B4488A1D16B6CBD100E1DDE7 /* AVFoundation.framework in Frameworks */,
+				B4488A1B16B6CBC800E1DDE7 /* CoreVideo.framework in Frameworks */,
+				B4488A1916B6CBBF00E1DDE7 /* CoreMedia.framework in Frameworks */,
 				B42016C216B1786D006CBF10 /* UIKit.framework in Frameworks */,
 				B42016C416B1786D006CBF10 /* Foundation.framework in Frameworks */,
-				B42016C616B1786D006CBF10 /* CoreGraphics.framework in Frameworks */,
+				B4488A0316B6C5D100E1DDE7 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +81,12 @@
 		B42016B216B1786D006CBF10 = {
 			isa = PBXGroup;
 			children = (
+				B4488A2216B6CBF000E1DDE7 /* libz.dylib */,
+				B4488A2016B6CBE800E1DDE7 /* CoreGraphics.framework */,
+				B4488A1E16B6CBD900E1DDE7 /* ImageIO.framework */,
+				B4488A1C16B6CBD100E1DDE7 /* AVFoundation.framework */,
+				B4488A1A16B6CBC800E1DDE7 /* CoreVideo.framework */,
+				B4488A1816B6CBBF00E1DDE7 /* CoreMedia.framework */,
 				B42016C716B1786D006CBF10 /* HTTPTest */,
 				B42016C016B1786D006CBF10 /* Frameworks */,
 				B42016BE16B1786D006CBF10 /* Products */,
@@ -78,9 +104,9 @@
 		B42016C016B1786D006CBF10 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B42016C116B1786D006CBF10 /* UIKit.framework */,
 				B42016C316B1786D006CBF10 /* Foundation.framework */,
-				B42016C516B1786D006CBF10 /* CoreGraphics.framework */,
+				B4488A0216B6C5D100E1DDE7 /* opencv2.framework */,
+				B42016C116B1786D006CBF10 /* UIKit.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -88,6 +114,7 @@
 		B42016C716B1786D006CBF10 /* HTTPTest */ = {
 			isa = PBXGroup;
 			children = (
+				B44889D416B6C06600E1DDE7 /* Simpsons.mp4 */,
 				B42016D016B1786D006CBF10 /* AppDelegate.h */,
 				B42016D116B1786D006CBF10 /* AppDelegate.m */,
 				B42016D916B1786D006CBF10 /* ViewController.h */,
@@ -96,7 +123,7 @@
 				B42016DF16B1786E006CBF10 /* ViewController_iPad.xib */,
 				B42016C816B1786D006CBF10 /* Supporting Files */,
 				B4E517D116B17A3D002CC5AE /* ImageService.h */,
-				B4E517D216B17A3D002CC5AE /* ImageService.m */,
+				B4E517D216B17A3D002CC5AE /* ImageService.mm */,
 			);
 			path = HTTPTest;
 			sourceTree = "<group>";
@@ -172,6 +199,7 @@
 				B42016D816B1786D006CBF10 /* Default-568h@2x.png in Resources */,
 				B42016DE16B1786E006CBF10 /* ViewController_iPhone.xib in Resources */,
 				B42016E116B1786E006CBF10 /* ViewController_iPad.xib in Resources */,
+				B44889D516B6C06600E1DDE7 /* Simpsons.mp4 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +213,7 @@
 				B42016CE16B1786D006CBF10 /* main.m in Sources */,
 				B42016D216B1786D006CBF10 /* AppDelegate.m in Sources */,
 				B42016DB16B1786D006CBF10 /* ViewController.m in Sources */,
-				B4E517D316B17A3D002CC5AE /* ImageService.m in Sources */,
+				B4E517D316B17A3D002CC5AE /* ImageService.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -274,6 +302,11 @@
 		B42016E516B1786E006CBF10 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/..\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HTTPTest/HTTPTest-Prefix.pch";
 				INFOPLIST_FILE = "HTTPTest/HTTPTest-Info.plist";
@@ -285,6 +318,11 @@
 		B42016E616B1786E006CBF10 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/..\"",
+					"\"$(SRCROOT)\"",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "HTTPTest/HTTPTest-Prefix.pch";
 				INFOPLIST_FILE = "HTTPTest/HTTPTest-Info.plist";
