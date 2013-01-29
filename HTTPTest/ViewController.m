@@ -10,6 +10,8 @@
 
 #import "ImageService.h"
 
+#import "MediaPlayer/MediaPlayer.h"
+
 @interface ViewController ()
 
 @end
@@ -20,9 +22,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    
-    ImageService *service = [[ImageService alloc] init];
-    [service loadImage];
 }
 
 - (void)didReceiveMemoryWarning
@@ -31,4 +30,32 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)test1:(id)sender
+{
+    ImageService *service = [[ImageService alloc] init];
+    
+    self.imageView.image = [service loadImage];
+}
+
+- (IBAction)test3:(id)sender
+{
+    NSURL *videoURL = [NSURL fileURLWithPath:@"/Users/lion/Documents/Simpsons.mp4"];
+    
+    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
+    
+    UIImage *image = [player thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+    
+    self.imageView.image = image;
+}
+
+- (IBAction)test2:(id)sender
+{
+    NSURL *videoURL = [NSURL fileURLWithPath:@"/Users/lion/Documents/Simpsons.mp4"];
+    
+    MPMoviePlayerViewController *playerController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
+    
+    [self presentMoviePlayerViewControllerAnimated:playerController];
+}
+
 @end
+

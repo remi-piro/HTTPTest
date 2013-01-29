@@ -10,6 +10,6 @@
 
 @interface ImageService : NSObject
 
-- (void)loadImage;
+- (UIImage *)loadImage;
 
 @end

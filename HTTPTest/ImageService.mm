@@ -34,10 +34,32 @@
 // http://snipplr.com/view/37888/uiimage-from-iplimage/
 // http://stackoverflow.com/questions/4263365/iphone-converting-iplimage-to-uiimage-and-back-causes-rotation
 
-
-- (void)loadImageJob
+- (UIImage *)UIImageFromIplImage:(IplImage *)image
 {
-    NSLog(@"loading images...");
+    CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+    // Allocating the buffer for CGImage
+    NSData *data = [NSData dataWithBytes:image->imageData length:image->imageSize];
+    CGDataProviderRef provider = CGDataProviderCreateWithCFData((__bridge CFDataRef) data);
+    // Creating CGImage from chunk of IplImage
+    CGImageRef imageRef = CGImageCreate(
+                                        image->width, image->height,
+                                        image->depth, image->depth * image->nChannels, image->widthStep,
+                                        colorSpace, kCGImageAlphaNone|kCGBitmapByteOrderDefault,
+                                        provider, NULL, false, kCGRenderingIntentDefault
+                                        );
+    // Getting UIImage from CGImage
+    UIImage *ret = [UIImage imageWithCGImage:imageRef];
+    CGImageRelease(imageRef);
+    CGDataProviderRelease(provider);
+    CGColorSpaceRelease(colorSpace);
+    return ret;
+}
+
+- (UIImage *)loadImageJob
+{
+    NSLog(@"loading image...");
+    
+    UIImage *image = nil;
     
     CvCapture *video = cvCreateFileCapture("/Users/lion/Documents/Simpsons.mp4");
     
@@ -48,19 +70,34 @@
         
         NSLog(@"found %d frames", nbFrames);
         
-        IplImage *frame = cvQueryFrame(video);
+        IplImage *frame = nil;
+        
+        int count = 0;
+
+        do {
+            frame = cvQueryFrame(video);
+            count++;
+        } while (frame != nil && count != (24 * 20));
         
         NSLog(@"frame %p", frame);
         
+        image = [self UIImageFromIplImage:frame];
+        
         cvReleaseCapture(&video);
     }
+    
+    return image;
 }
 
-- (void)loadImage
+- (UIImage *)loadImage
 {
+    /*
     NSInvocationOperation *operation = [[NSInvocationOperation alloc] initWithTarget:self selector:@selector(loadImageJob) object:nil];
 
     [self.queue addOperation:operation];
+     */
+    
+    return [self loadImageJob];
 }
 
 @end
