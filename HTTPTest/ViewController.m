@@ -30,7 +30,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)test1:(id)sender
+- (IBAction)test2:(id)sender
 {
     ImageService *service = [[ImageService alloc] init];
     
@@ -48,9 +48,10 @@
     self.imageView.image = image;
 }
 
-- (IBAction)test2:(id)sender
+- (IBAction)test1:(id)sender
 {
-    NSURL *videoURL = [NSURL fileURLWithPath:@"/Users/lion/Documents/Simpsons.mp4"];
+//    NSURL *videoURL = [NSURL fileURLWithPath:@"/Users/lion/Documents/Simpsons.mp4"];
+    NSURL *videoURL = [NSURL fileURLWithPath:@"/Users/lion/Documents/480p-video.mp4"];
     
     MPMoviePlayerViewController *playerController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
     
