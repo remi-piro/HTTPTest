@@ -8,11 +8,17 @@
 
 #import "ViewController.h"
 
+#import <SystemConfiguration/SystemConfiguration.h>
+
 #import "ImageService.h"
 
 #import "MediaPlayer/MediaPlayer.h"
 
-@interface ViewController ()
+#import "network.h"
+
+@interface ViewController () {
+    int socket_fd;
+}
 
 @end
 
@@ -30,32 +36,76 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)test2:(id)sender
+- (void)checkNeedConnectionOpen
 {
-    ImageService *service = [[ImageService alloc] init];
+	// Attempt to ping www.apple.com
+	SCNetworkReachabilityRef reach = SCNetworkReachabilityCreateWithName(kCFAllocatorSystemDefault, "www.apple.com");
+	SCNetworkConnectionFlags flags;
+	
+	// Store reachability flags in the variable, flags.
+	SCNetworkReachabilityGetFlags(reach, &flags);
     
-    self.imageView.image = [service loadImage];
+    NSLog(@"Checking connection");
+	
+	if(kSCNetworkReachabilityFlagsConnectionRequired & flags)
+	{
+        NSLog(@"Establishing connection");
+                
+		// Can be reached using current connection, but a connection must be established. (Any traffic to the specific node will initiate the connection)
+		NSURL *url = [NSURL URLWithString:@"http://www.apple.com/"];
+		NSURLRequest *request = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
+		NSURLResponse *response = nil;
+		
+		[NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    }
 }
 
-- (IBAction)test3:(id)sender
+- (IBAction)doOpen:(id)sender
 {
-    NSURL *videoURL = [NSURL fileURLWithPath:@"/Users/lion/Documents/Simpsons.mp4"];
+    [self checkNeedConnectionOpen];
     
-    MPMoviePlayerController *player = [[MPMoviePlayerController alloc] initWithContentURL:videoURL];
+    socket_fd = openSocket();
     
-    UIImage *image = [player thumbnailImageAtTime:0 timeOption:MPMovieTimeOptionNearestKeyFrame];
+    NSLog(@"socket %d", socket_fd);
     
-    self.imageView.image = image;
+    if (socket_fd > 0) {
+        int ret;
+        
+//        ret = sendRequest(socket_fd, "GET /raw_media/remi/hello.txt HTTP/1.1\n");
+        ret = sendRequest(socket_fd, "GET /raw_media/channel_10.mp4 HTTP/1.1\n");
+        NSLog(@"send %d", ret);
+        
+        ret = sendRequest(socket_fd, "Host: www3.r3gis.fr\n");
+        NSLog(@"send %d", ret);
+
+        ret = sendRequest(socket_fd, "Accept-Encoding: identity\n");
+        NSLog(@"send %d", ret);
+
+        ret = sendRequest(socket_fd, "Accept: */*\n");
+        NSLog(@"send %d", ret);
+
+        ret = sendRequest(socket_fd, "Accept-Language: fr-fr\n");
+        NSLog(@"send %d", ret);
+
+        ret = sendRequest(socket_fd, "Connection: keep-alive\n");
+        NSLog(@"send %d", ret);
+
+        ret = sendRequest(socket_fd, "User-Agent: AppleCoreMedia/1.0.0.10A403 (iPhone; U; CPU OS 6_0 like Mac OS X; fr_fr)\n");
+        NSLog(@"send %d", ret);
+
+        ret = sendRequest(socket_fd, "\n");
+        NSLog(@"send %d", ret);
+
+        ret = receiveResponse(socket_fd);
+        NSLog(@"receive %d", ret);
+    }
 }
 
-- (IBAction)test1:(id)sender
+- (IBAction)doClose:(id)sender
 {
-//    NSURL *videoURL = [NSURL fileURLWithPath:@"/Users/lion/Documents/Simpsons.mp4"];
-    NSURL *videoURL = [NSURL fileURLWithPath:@"/Users/lion/Documents/480p-video.mp4"];
+    int ret = closeSocket(socket_fd);
     
-    MPMoviePlayerViewController *playerController = [[MPMoviePlayerViewController alloc] initWithContentURL:videoURL];
-    
-    [self presentMoviePlayerViewControllerAnimated:playerController];
+    NSLog(@"close socket %d", ret);
 }
 
 @end

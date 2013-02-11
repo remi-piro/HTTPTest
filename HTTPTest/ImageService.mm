@@ -100,4 +100,8 @@
     return [self loadImageJob];
 }
 
+- (double)openCVTest
+{
+}
+
 @end

@@ -26,6 +26,8 @@
 		B4488A2116B6CBE800E1DDE7 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A2016B6CBE800E1DDE7 /* CoreGraphics.framework */; };
 		B4488A2316B6CBF000E1DDE7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A2216B6CBF000E1DDE7 /* libz.dylib */; };
 		B4488A2516B7C6ED00E1DDE7 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4488A2416B7C6ED00E1DDE7 /* MediaPlayer.framework */; };
+		B4997F5816C9336600D4D822 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4997F5716C9336600D4D822 /* SystemConfiguration.framework */; };
+		B4997F5B16C934A900D4D822 /* network.c in Sources */ = {isa = PBXBuildFile; fileRef = B4997F5A16C934A900D4D822 /* network.c */; };
 		B4E517D316B17A3D002CC5AE /* ImageService.mm in Sources */ = {isa = PBXBuildFile; fileRef = B4E517D216B17A3D002CC5AE /* ImageService.mm */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +56,9 @@
 		B4488A2016B6CBE800E1DDE7 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		B4488A2216B6CBF000E1DDE7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		B4488A2416B7C6ED00E1DDE7 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		B4997F5716C9336600D4D822 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		B4997F5A16C934A900D4D822 /* network.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = network.c; sourceTree = "<group>"; };
+		B4997F5C16C934B800D4D822 /* network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = network.h; sourceTree = "<group>"; };
 		B4E517D116B17A3D002CC5AE /* ImageService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageService.h; sourceTree = "<group>"; };
 		B4E517D216B17A3D002CC5AE /* ImageService.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ImageService.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4997F5816C9336600D4D822 /* SystemConfiguration.framework in Frameworks */,
 				B4488A2516B7C6ED00E1DDE7 /* MediaPlayer.framework in Frameworks */,
 				B4488A2316B6CBF000E1DDE7 /* libz.dylib in Frameworks */,
 				B4488A2116B6CBE800E1DDE7 /* CoreGraphics.framework in Frameworks */,
@@ -82,6 +88,7 @@
 		B42016B216B1786D006CBF10 = {
 			isa = PBXGroup;
 			children = (
+				B4997F5716C9336600D4D822 /* SystemConfiguration.framework */,
 				B4488A2416B7C6ED00E1DDE7 /* MediaPlayer.framework */,
 				B4488A2216B6CBF000E1DDE7 /* libz.dylib */,
 				B4488A2016B6CBE800E1DDE7 /* CoreGraphics.framework */,
@@ -125,6 +132,8 @@
 				B42016C816B1786D006CBF10 /* Supporting Files */,
 				B4E517D116B17A3D002CC5AE /* ImageService.h */,
 				B4E517D216B17A3D002CC5AE /* ImageService.mm */,
+				B4997F5A16C934A900D4D822 /* network.c */,
+				B4997F5C16C934B800D4D822 /* network.h */,
 			);
 			path = HTTPTest;
 			sourceTree = "<group>";
@@ -214,6 +223,7 @@
 				B42016D216B1786D006CBF10 /* AppDelegate.m in Sources */,
 				B42016DB16B1786D006CBF10 /* ViewController.m in Sources */,
 				B4E517D316B17A3D002CC5AE /* ImageService.mm in Sources */,
+				B4997F5B16C934A900D4D822 /* network.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
