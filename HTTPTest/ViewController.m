@@ -16,18 +16,60 @@
 
 #import "network.h"
 
+#import "HTTPMediaDownloader.h"
+
 @interface ViewController () {
     int socket_fd;
 }
+
+@property(nonatomic, strong) HTTPMediaDownloader *md;
 
 @end
 
 @implementation ViewController
 
+- (NSArray *)loadImages {
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSURL *urlToVideo = [bundle URLForResource:@"video2" withExtension:nil];
+    
+    NSMutableArray *imageArray = nil;
+    
+    if (urlToVideo) {
+        NSFileManager *fileManager = [NSFileManager defaultManager];
+        
+        NSString *basePath = urlToVideo.path;
+        
+        NSArray *files = [fileManager contentsOfDirectoryAtPath:basePath error:nil];
+        
+        if (files) {
+            
+            NSUInteger nbOfFiles = files.count;
+            
+            imageArray = [NSMutableArray arrayWithCapacity:nbOfFiles];
+            
+            for (NSString *file in files) {
+                
+                NSString *fullPath = [basePath stringByAppendingPathComponent:file];
+                
+                // load everything in memory
+                NSData *data = [fileManager contentsAtPath:fullPath];
+                UIImage *image = [UIImage imageWithData:data];
+                [imageArray addObject:image];
+            }
+        }
+    }
+    
+    return imageArray;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+	
+    NSArray *imagesList = [self loadImages];
+    [self.imageBrowser addImagesToTheLeft:imagesList];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -103,9 +145,56 @@
 
 - (IBAction)doClose:(id)sender
 {
-    int ret = closeSocket(socket_fd);
+    if (self.md != nil) {
+        NSLog(@"close md");
+        [self.md close];
+        self.md = nil;
+    }
+    else {
+        int ret = closeSocket(socket_fd);
     
-    NSLog(@"close socket %d", ret);
+        NSLog(@"close socket %d", ret);
+    }
+}
+
+- (IBAction)doTest1:(id)sender
+{
+    BOOL ret = YES;
+    
+    if (self.md == nil) {
+        self.md = [HTTPMediaDownloader mediaDownloaderWithHost:@"www3.r3gis.fr"];
+    
+        ret = [self.md open];
+    }
+    
+    if (ret) {
+        NSLog(@"open ok");
+        
+        [self.md downloadResource:@"/raw_media/channel_10.mp4"];
+    }
+    else {
+        NSLog(@"open NOT ok");
+    }
+}
+
+- (IBAction)doTest2:(id)sender
+{
+    BOOL ret = YES;
+    
+    if (self.md == nil) {
+        self.md = [HTTPMediaDownloader mediaDownloaderWithHost:@"www3.r3gis.fr"];
+        
+        ret = [self.md open];
+    }
+    
+    if (ret) {
+        NSLog(@"open ok");
+        
+        [self.md downloadResource:@"/raw_media/channel_11.mp4"];
+    }
+    else {
+        NSLog(@"open NOT ok");
+    }
 }
 
 @end

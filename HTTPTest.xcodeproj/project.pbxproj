@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A53E42D316C965F400B92EF4 /* HTTPMediaDownloader.m in Sources */ = {isa = PBXBuildFile; fileRef = A53E42D216C965F400B92EF4 /* HTTPMediaDownloader.m */; };
+		A53E42D716C9687B00B92EF4 /* HTTPNetwork.c in Sources */ = {isa = PBXBuildFile; fileRef = A53E42D616C9687B00B92EF4 /* HTTPNetwork.c */; };
+		A5B4D36116CB992D0089D230 /* FlipImageBrowser.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B4D36016CB992D0089D230 /* FlipImageBrowser.m */; };
+		A5B4D36416CB9B330089D230 /* video2 in Resources */ = {isa = PBXBuildFile; fileRef = A5B4D36316CB9B330089D230 /* video2 */; };
 		B42016C216B1786D006CBF10 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B42016C116B1786D006CBF10 /* UIKit.framework */; };
 		B42016C416B1786D006CBF10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B42016C316B1786D006CBF10 /* Foundation.framework */; };
 		B42016CC16B1786D006CBF10 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = B42016CA16B1786D006CBF10 /* InfoPlist.strings */; };
@@ -32,6 +36,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A53E42D116C965F400B92EF4 /* HTTPMediaDownloader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPMediaDownloader.h; sourceTree = "<group>"; };
+		A53E42D216C965F400B92EF4 /* HTTPMediaDownloader.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPMediaDownloader.m; sourceTree = "<group>"; };
+		A53E42D516C9686D00B92EF4 /* HTTPNetwork.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPNetwork.h; sourceTree = "<group>"; };
+		A53E42D616C9687B00B92EF4 /* HTTPNetwork.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = HTTPNetwork.c; sourceTree = "<group>"; };
+		A5B4D35F16CB992D0089D230 /* FlipImageBrowser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FlipImageBrowser.h; sourceTree = "<group>"; };
+		A5B4D36016CB992D0089D230 /* FlipImageBrowser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FlipImageBrowser.m; sourceTree = "<group>"; };
+		A5B4D36316CB9B330089D230 /* video2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = video2; sourceTree = "<group>"; };
 		B42016BD16B1786D006CBF10 /* HTTPTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HTTPTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B42016C116B1786D006CBF10 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B42016C316B1786D006CBF10 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -123,6 +134,7 @@
 		B42016C716B1786D006CBF10 /* HTTPTest */ = {
 			isa = PBXGroup;
 			children = (
+				A5B4D36316CB9B330089D230 /* video2 */,
 				B42016D016B1786D006CBF10 /* AppDelegate.h */,
 				B42016D116B1786D006CBF10 /* AppDelegate.m */,
 				B42016D916B1786D006CBF10 /* ViewController.h */,
@@ -134,6 +146,12 @@
 				B4E517D216B17A3D002CC5AE /* ImageService.mm */,
 				B4997F5A16C934A900D4D822 /* network.c */,
 				B4997F5C16C934B800D4D822 /* network.h */,
+				A53E42D116C965F400B92EF4 /* HTTPMediaDownloader.h */,
+				A53E42D216C965F400B92EF4 /* HTTPMediaDownloader.m */,
+				A53E42D516C9686D00B92EF4 /* HTTPNetwork.h */,
+				A53E42D616C9687B00B92EF4 /* HTTPNetwork.c */,
+				A5B4D35F16CB992D0089D230 /* FlipImageBrowser.h */,
+				A5B4D36016CB992D0089D230 /* FlipImageBrowser.m */,
 			);
 			path = HTTPTest;
 			sourceTree = "<group>";
@@ -209,6 +227,7 @@
 				B42016D816B1786D006CBF10 /* Default-568h@2x.png in Resources */,
 				B42016DE16B1786E006CBF10 /* ViewController_iPhone.xib in Resources */,
 				B42016E116B1786E006CBF10 /* ViewController_iPad.xib in Resources */,
+				A5B4D36416CB9B330089D230 /* video2 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,6 +243,9 @@
 				B42016DB16B1786D006CBF10 /* ViewController.m in Sources */,
 				B4E517D316B17A3D002CC5AE /* ImageService.mm in Sources */,
 				B4997F5B16C934A900D4D822 /* network.c in Sources */,
+				A53E42D316C965F400B92EF4 /* HTTPMediaDownloader.m in Sources */,
+				A53E42D716C9687B00B92EF4 /* HTTPNetwork.c in Sources */,
+				A5B4D36116CB992D0089D230 /* FlipImageBrowser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

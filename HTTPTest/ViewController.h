@@ -8,10 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+#import "FlipImageBrowser.h"
+
 @interface ViewController : UIViewController
 
+@property(nonatomic, weak) IBOutlet FlipImageBrowser *imageBrowser;
 
 - (IBAction)doOpen:(id)sender;
 - (IBAction)doClose:(id)sender;
+
+- (IBAction)doTest1:(id)sender;
+- (IBAction)doTest2:(id)sender;
 
 @end
